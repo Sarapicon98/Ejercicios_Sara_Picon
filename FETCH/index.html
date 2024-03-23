@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // fetch('https://random.dog/woof.json')
+        //     .then( response => {
+        //     const data = response.json().then(
+        //         data => {
+        //             document.body.innerHTML = "<img src='" + data.url + "'>"
+        //         }
+        //     )
+        // })
+
+
+        // const myArrayIndex = [];
+
+        // setTimeout(() => {
+
+        //     console.log('primer log')
+        // }, 1000);
+
+
+
+
+        // console.log('segundo log');
+
+        // obten de los datos de la siguiente api.
+
+        // https://rickandmortyapi.com/api/character/108
+
+        fetch('https://rickandmortyapi.com/api/character/108')
+            .then( 
+                response=>{
+                    response.json().then(
+                        (data)=>{
+                        console.log(data);
+                    })
+                }
+            )
+    </script>
+
+</body>
+
+</html>

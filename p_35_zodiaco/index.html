@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signos del Zodiaco</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Signos del Zodiaco</h1>
+    <table id="tabla-zodiaco">
+        <thead>
+            <tr>
+                <th>Signo</th>
+                <th>Elemento</th>
+                <th>Fecha</th>
+                <th>Domicilio</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const zodiaco = {
+        "Capricornio": {
+            elemento: 'Tierra',
+            fecha: '23 de diciembre - 22 de Enero',
+            domicilio: 'Saturno'
+        },
+        "Acuario": {
+            elemento: 'Aire',
+            fecha: '23 de Enero - 20 de Febrero',
+            domicilio: 'Urano y Saturno'
+        },
+        "Piscis": {
+            elemento: 'Agua',
+            fecha: '21 de febrero - 20 de Marzo',
+            domicilio: 'Neptuno y Júpiter'
+        },
+        "Aries": {
+            elemento: 'Fuego',
+            fecha: '21 de marzo - 19 de abril',
+            domicilio: 'Marte y Plutón'
+        },
+        "Tauro": {
+            elemento: 'Tierra',
+            fecha: '20 de abril - 20 de mayo',
+            domicilio: 'Venus y Tierra'
+        },
+        "Géminis": {
+            elemento: 'Aire',
+            fecha: '21 de mayo - 20 de junio',
+            domicilio: 'Mercurio'
+        },
+        "Cáncer": {
+            elemento: 'Agua',
+            fecha:  '21 de junio - 20 de julio',
+            domicilio: 'Luna'
+        },
+        "Leo": {
+            elemento: 'Fuego',
+            fecha: '21 de julio - 22 de agosto',
+            domicilio: 'Sol'
+        },
+        "Virgo": {
+            elemento: 'Tierra',
+            fecha: '23 de agosto - 23 de septiembre',
+            domicilio: 'Mercurio'
+        },
+        "Libra": {
+            elemento: 'Aire',
+            fecha: '24 de septiembre - 23 de octubre',
+            domicilio: 'Venus'
+        },
+        "Escorpio": {
+            elemento: 'Agua',
+            fecha: '24 de octubre - 22 de noviembre',
+            domicilio: 'Plutón y Marte'
+        },
+        "Sagitario": {
+            elemento: 'Fuego',
+            fecha: '23 de noviembre - 22 de diciembre',
+            domicilio: 'Júpiter'
+        }
+    };
+
+    const tabla = document.getElementById('cuerpo-tabla');
+
+    Object.keys(zodiaco).forEach(signo => {
+        const fila = document.createElement('tr');
+
+        const celdaSigno = document.createElement('td');
+        celdaSigno.textContent = signo;
+        fila.appendChild(celdaSigno);
+
+        const celdaElemento = document.createElement('td');
+        celdaElemento.textContent = zodiaco[signo].elemento || 'No disponible';
+        fila.appendChild(celdaElemento);
+
+        const celdaFecha = document.createElement('td');
+        celdaFecha.textContent = zodiaco[signo].fecha || 'No disponible';
+        fila.appendChild(celdaFecha);
+
+        const celdaDomicilio = document.createElement('td');
+        celdaDomicilio.textContent = zodiaco[signo].domicilio || 'No disponible';
+        fila.appendChild(celdaDomicilio);
+
+        tabla.appendChild(fila);
+    });
+});
+
+    </script>
+</body>
+</html>

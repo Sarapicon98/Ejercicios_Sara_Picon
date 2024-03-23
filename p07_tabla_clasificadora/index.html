@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ejercicio tabla clasificadora</title>
+</head>
+
+<body>
+    
+    <table class="my-table">
+        <thead>
+            <tr>
+                <th class="my-table__cell"></th>
+                <th class="my-table__cell">BLOCK</th>
+                <th class="my-table__cell">INLINE</th>
+                <th class="my-table__cell">REPLACED</th>
+                <th class="my-table__cell">VOID</th>
+            </tr>
+            <!-- si quisiera combinar varias celdas utilizaria colspan="número de columnas" -->
+        </thead>
+        <!-- colspan es para unir celdas horizontalmente. para unilas habria de eliminar la sobrante e indicar el número de celdas a unir. COLUMNAS-->
+        <!-- también existe rowspan para unir celdas verticalmente. FILAS -->
+        <tr class="my-table__row my-table__row--blue" >
+            <td class="my-table__cell"> div</td>
+            <td class="my-table__cell"> X </td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell"></td>
+        </tr>
+        <tr class="my-table__row my-table__row--blue1">
+            <td class="my-table__cell"> img</td>
+            <td class="my-table__cell"> </td>
+            <td class="my-table__cell" colspan="3">X</td>
+           
+        </tr>
+        <tr class="my-table__row my-table__row--blue2">
+            <td class="my-table__cell"> meta</td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell">X</td>
+        </tr>
+        <tr class="my-table__row my-table__row--blue3">
+            <td class="my-table__cell"> a </td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell">X</td>
+            <td class="my-table__cell"></td>
+            <td class="my-table__cell"></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

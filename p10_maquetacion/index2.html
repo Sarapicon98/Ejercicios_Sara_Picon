@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/style.css">
+    <title>Maquetación 2</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header-menu {
+            background-color: gray;
+            padding: 20px 20px 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-menu__side {
+            display: flex;
+        }
+
+        .header-menu__item {
+            background-color: white;
+            width: 100px;
+            padding: 8px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .header-menu__circle {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+    <header class="header-menu">
+        <nav class="header-menu__side">
+            <ul class="header-menu__block">
+                <li class="header-menu__item">HOME</li>
+                <li class="header-menu__item">sweet</li>
+            </ul>
+            <ul class="header-menu__block">
+                <li class="header-menu__item">ABOUT</li>
+                <li class="header-menu__item">us</li>
+            </ul>
+        </nav>
+        <div class="header-menu__circle"></div>
+        <nav class="header-menu__side">
+            <ul class="header-menu__block">
+                <li class="header-menu__item">LIFE</li>
+                <li class="header-menu__item">good</li>
+            </ul>
+            <ul class="header-menu__block">
+                <li class="header-menu__item">CONTACT</li>
+                <li class="header-menu__item">me</li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>

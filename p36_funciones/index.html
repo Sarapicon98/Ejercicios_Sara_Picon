@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // definición
+        //     function pintarLog(nombre, apellidos, edad){
+        //         const mensaje = "hola, me llamo " + nombre+ ' '+ apellidos + ' tentgo '+edad+' años';
+        //         console.log(mensaje);
+        //     }
+
+        //     // llamada
+        //     pintarLog("Mike","Sanchez", 25);
+        //     console.log(pintarLog("Mike","Sanchez", 25));
+        //     // anatonmía
+        //    function nombreUnico(param1, param2, param3){
+        //     // código
+
+        //     // valor de retorno
+        //     return "pepe";
+        //    }
+
+        // ejercicio 2
+        //    crea una función que reciba dos números y los devuelva sumados
+        // 1.definición
+        //     function suma(n1, n2) {
+        //         const sumafinal = n1+ n2;
+        //         // 2. crear el valor de retorno con return
+        //         return sumafinal;
+        //     }
+        //     // 3.Llamarla
+
+        //     console.log(suma(5,4)); // Esto imprimirá 2 en la consola 
+
+        // ejercicio 3
+
+        // funcion que calcule si un numero pasado por parametro es par o impar y lo imprima en la pantalla.
+        // Definición de la función
+        // function calcularParidad(num) {
+        //     // Verificar si el número es par o impar
+        //     return num%2==0 ? "par" : "impar"
+        // }
+
+        // // Llamar a la función y mostrar el resultado en la pantalla
+        // document.body.innerHTML = calcularParidad(8);
+
+        // ejercicio 4
+        // funcion que reciba parametros : nombre y apellidos, los pongan en mayusculas, los concatene y los devuelva dentro de otra funcion que le concatena la edad pasada por parametro
+
+        function nombreAprellidos(nombre, apellidos, edad){
+                const mensaje = "hola, me llamo " + nombre+ ' '+ apellidos + "y tengo " + edad + " años";
+                console.log(mensaje);
+            }
+
+            // llamada
+            nombreAprellidos("Sara","Picón",25);
+            console.log(nombreAprellidos("Sara","Picón", 25));
+            // anatonmía
+           function nombreFrase(param1, param2, param3){
+            // código
+
+            // valor de retorno
+            return "hola, me llamo " + nombre + apellidos+ "y tengo " + edad ;
+           }
+    </script>
+
+</body>
+
+</html>

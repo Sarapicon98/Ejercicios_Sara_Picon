@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanzamiento de moneda</title>
+</head>
+<body>
+    <button onclick="lanzarMoneda()">Lanzar moneda</button>
+    <div id="resultado"></div>
+
+    <script>
+        var lanzamientos = 0;
+
+        function lanzarMoneda() {
+            if (lanzamientos < 3) {
+                var resultado = Math.random() < 0.5 ? "Cara" : "Cruz";
+                document.getElementById('resultado').innerText = resultado;
+                lanzamientos++;
+                if (lanzamientos === 3) {
+                    document.getElementById('resultado').innerText = "No tientes a tu suerte, amigo";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

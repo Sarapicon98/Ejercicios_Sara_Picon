@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcoiris</title>
+</head>
+<body>
+    <script>
+        function crearDivsArcoiris(numeroDivs) {
+            var anchoPantalla = window.innerWidth;
+            var altoPantalla = window.innerHeight;
+            var pasoRojo = 255 / numeroDivs;
+            var pasoVerde = 255 / numeroDivs;
+            var pasoAzul = 255 / numeroDivs;
+
+            for (var i = 0; i < numeroDivs; i++) {
+                var div = document.createElement('div');
+                div.style.width = (anchoPantalla / numeroDivs) + 'px';
+                div.style.height = altoPantalla + 'px';
+                div.style.float = 'left';
+                div.style.backgroundColor = 'rgb(' + Math.floor(pasoRojo * i) + ',' + Math.floor(pasoVerde * i) + ',' + Math.floor(pasoAzul * i) + ')';
+                document.body.appendChild(div);
+            }
+        }
+
+        crearDivsArcoiris(10);
+    </script>
+</body>
+</html>

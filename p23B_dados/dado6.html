@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado 6</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center; 
+            /* al ser row justify-content en horizontal */
+            align-items: center;
+            /* este es vertical */
+            height: 100vh;
+            background-color: #00f;
+            
+        }
+
+        .dado{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 30px;
+            padding: 25px;
+            align-content: space-between;
+            gap: 10%;
+        }
+
+        .punto{
+            padding: 35px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #000;
+        }
+        
+    </style>
+<div class="container">
+<div class="dado">
+    <div class="punto punto--1"></div>    
+    <div class="punto punto--2"></div>
+    <div class="punto punto--3"></div>
+    <div class="punto punto--4"></div>
+    <div class="punto punto--5"></div>
+    <div class="punto punto--6"></div>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOLA DE DRAGÓN</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(16deg, rgba(1, 0, 15, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(8, 30, 255, 1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .game__container {
+            display: flex;
+            align-items: center;
+        }
+
+        .game__fighter {
+            flex: 1;
+            text-align: center;
+            background: #2a2a2a;
+        }
+
+        .game__fighter-in img {
+            width: 400px;
+            height: 300px;
+            border: 4px solid orange;
+        }
+
+        .button {
+            flex: 0 0 auto;
+            margin: 40px;
+            border: 4px solid black;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button button {
+            flex: 0 0 auto;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: #fff;
+            color: #000;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .winner{
+            position: relative;
+            border: 0.5rem solid #f00;
+        }
+
+        .winner::after{
+            content: "WINNER";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            font-size: 2rem;
+            color: #f00;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .draw{
+            position: relative;
+            border: 0.5rem solid #f70;
+        }
+
+        .draw::after{
+            content: "DRAW";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            font-size: 2rem;
+            color: #f70;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <section class="game">
+        <div class="game__container">
+
+            <!-- fighter L -->
+            <div class="game__container game__container--left ">
+            <div class="game__fighter game__fighter--left">
+                <div class="game__fighter-in game__fighter-in--left">
+                    <img src="img/goku.webp" alt="">
+                </div>
+            </div>
+        </div>
+            <!-- /fighter L -->
+
+            <!-- Fight button -->
+            <div class="button">
+                <button>FIGHT!</button>
+            </div>
+            <!-- /Fight button -->
+
+            <!-- Fighter R -->
+            <div class="game__container game__container--right ">
+            <div class="game__fighter game__fighter--right">
+                <div class="game__fighter-in game__fighter-in--right">
+                    <img src="img/picollo.webp" alt="">
+                </div>
+            </div>
+        </div>
+            <!-- /Fighter R -->
+        </div>
+    </section>
+    <script>
+        const personajes = {
+            p0: {
+                name: 'goku',
+                force: '1'
+            },
+            p1: {
+                name: 'vejeta',
+                force: '2'
+            },
+            p2: {
+                name: 'picollo',
+                force: '3'
+            },
+        };
+
+        // 1.Capturar todo lo necesario
+        const btnFight = document.querySelector('.button button')
+        const fotoContainerLeft = document.querySelector('.game__fighter-in--left')
+        const fotoContainerRight = document.querySelector('.game__fighter-in--right')
+        // 2.lanzar evento click
+
+        // 2.Definir función
+        function fight() {
+            const ObjectKeyLeft = Object.keys(personajes)[Math.floor(Math.random() * 3)];
+            const ObjectKeyRight = Object.keys(personajes)[Math.floor(Math.random() * 3)];
+
+            console.log(ObjectKeyLeft);
+
+            const urlLeft = "img/" + personajes[ObjectKeyLeft].name + ".webp";
+            const urlRight = "img/" + personajes[ObjectKeyRight].name + ".webp";
+
+            console.log(urlLeft);
+
+            const forceLeft = personajes[ObjectKeyRight].force;
+            const forceRight = personajes[ObjectKeyRight].force;
+
+            const photoLeft = document.createElement('img');
+            photoLeft.src = urlLeft;
+            fotoContainerLeft.innerHTML = "";
+            fotoContainerLeft.appendChild(photoLeft);
+
+            const photoRight = document.createElement('img');
+            photoRight.src = urlRight;
+            fotoContainerRight.innerHTML = "";
+            fotoContainerRight.appendChild(photoRight);
+
+
+            fotoContainerLeft.parentNode.classList.remove('winner','draw');
+            fotoContainerRight.parentNode.classList.remove('winner','draw');
+
+            if(forceLeft > forceRight){
+                fotoContainerLeft.parentNode.classList.add('winner');
+            }else if(forceRight > forceLeft){
+                    fotoContainerRight.parentNode.classList.add('winner'); 
+                }else{
+                fotoContainerLeft.parentNode.classList.add('draw');
+                fotoContainerRight.parentNode.classList.add('draw'); 
+            }
+        }
+
+        btnFight.addEventListener('click', fight);
+        // leer dos propiedades ramdom del objeto
+        // obtener un número ramdom de 0 a 2 y usarlo para acceder al objeto
+
+
+        // al leer las props
+        //  me quedo con el atributo name para crear la url de la foto
+        // me quedo con el atributo force para comparar las fuerzas
+
+        // pinto imágenes con createElement
+
+        // comparo fuerzas
+        // al mayor le pinto winner - por style o classList
+        // si son iguales pinto draw - por style o classList
+    </script>
+</body>
+
+</html>

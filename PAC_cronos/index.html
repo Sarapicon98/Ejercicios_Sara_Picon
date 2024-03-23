@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .cronometro {
+            font-size: 2em;
+        }
+
+        .contador {
+            display: inline-block;
+            width: 50px;
+        }
+
+        .botones {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: rgb(101, 101, 177);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button :hover {
+            background: rgb(159, 159, 209);
+        }
+    </style>
+    <!-- 1. crea un cronómetro segundero con 3 botones: iniciar, parar y poner a cero -->
+    <!-- 2. crea 2 slots en el que se mostrarán centésimas y segundos. -->
+    <!-- 3. cuando las centésimas lleguen a 100 suma +1 segundos -->
+    <div id="cronometro" class="cronometro">
+        <div class="contador" id="segundos">00</div>
+        <div class="contador" id="centesimas">00</div>
+    </div>
+
+    <div id="botones" class="botones">
+        <button id="iniciar">Iniciar</button>
+        <button id="parar">Parar</button>
+        <button id="cero">Poner a cero</button>
+
+
+        <script>
+            let totalCentesimas = 0;
+            let interval;
+
+            const segundosDisplay = document.getElementById('segundos');
+            const centesimasDisplay = document.getElementById('centesimas');
+            const iniciarBtn = document.getElementById('iniciar');
+            const pararBtn = document.getElementById('parar');
+            const ceroBtn = document.getElementById('cero');
+
+
+            function iniciarCronometro() {
+                interval = setInterval(() => {
+                    totalCentesimas++;
+                    const segundos = Math.floor(totalCentesimas / 100);
+                    const centesimas = totalCentesimas % 100;
+                    segundosDisplay.textContent = segundos.toString().padStart(2, '0');
+                    centesimasDisplay.textContent = centesimas.toString().padStart(2, '0');
+                }, 10);
+                deshabilitarBoton(iniciarBtn);
+            }
+
+            function pararCronometro() {
+                clearInterval(interval);
+                habilitarBoton(iniciarBtn);
+            }
+
+            function reiniciarCronometro() {
+                clearInterval(interval);
+                totalCentesimas = 0;
+                segundosDisplay.textContent = '00';
+                centesimasDisplay.textContent = '00';
+                habilitarBoton(iniciarBtn);
+            }
+
+            function deshabilitarBoton(boton) {
+                boton.disabled = true;
+            }
+
+            function habilitarBoton(boton) {
+                boton.disabled = false;
+            }
+
+            iniciarBtn.addEventListener('click', iniciarCronometro);
+            pararBtn.addEventListener('click', pararCronometro);
+            ceroBtn.addEventListener('click', reiniciarCronometro);
+
+        </script>
+</body>
+
+</html>

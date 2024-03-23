@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .cronometro {
+            font-size: 2em;
+        }
+
+        .contador {
+            display: inline-block;
+            width: 50px;
+        }
+
+        .botones {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: rgb(101, 101, 177);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button :hover {
+            background: rgb(159, 159, 209);
+        }
+    </style>
+
+    <div class="reloj">
+        <div class="segundos">0</div>
+        <div class="centisegundos">0</div>
+    </div>
+
+    <div id="botones" class="botones">
+        <button class="iniciar"  value="iniciar">Iniciar</button>
+        <button class="parar" value="parar">Parar</button>
+        <button class="cero" value="cero">Poner a cero</button>
+
+        <script>
+            const btns = document.querySelector(".botones");
+            const centisegundos = document.querySelector(".centisegundos");
+
+            let centesimasCounter = 0;
+            let centesimas= {};
+
+            function iniciarCrono(){
+                const centesimas = setInterval(()=>{
+                    centesimasCounter++
+                    if(centesimasCounter ==100) centesimasCounter=0;
+                    centisegundos.innerHTML = centesimasCounter;
+                },10);
+            }
+
+            function pararCrono(){
+               clearInterval(centesimas);
+            }
+
+            function poneraCero(){
+               centesimasCounter = 0; 
+            }
+            btns.addEventListener('click', function(e){
+                e.target.value === "iniciar" && iniciarCrono();
+                e.target.value === "parar" && pararCrono();
+                e.target.value === "cero" && poneraCero();
+            })
+        </script>
+</body>
+
+</html>

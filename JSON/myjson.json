@@ -1,0 +1,13 @@
+{
+    "name":"sara",
+    "surname": "picon",
+    "edad":23,
+    "aficiones": ["hockey","futbol"],
+    "personalidad":{
+        "humor":"fino",
+        "sss":23
+    },
+    "boolean": true,
+    "null": null
+}
+

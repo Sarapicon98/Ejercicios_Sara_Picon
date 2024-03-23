@@ -1,0 +1,58 @@
+.squares__item {
+    background-color: aqua;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    padding: 20px;
+}
+
+.squares_small-square {
+    background-color: yellow;
+    height: 40px;
+    width: 40px;
+}
+
+.squares__item--red {
+    background-color: red;
+}
+
+.squares__item--yellow {
+    background-color: yellow;
+}
+
+.squares__item--green1 {
+    background-color: greenyellow;
+}
+
+.squares__item--green {
+    background-color: green;
+}
+
+.squares__item--cyan {
+    background-color: cyan;
+}
+
+.squares__item--purple {
+    background-color: purple;
+}
+
+.squares__item--magenta {
+    background-color: magenta;
+}
+
+.squares__item--gray {
+    background-color: gray;
+    position: relative;
+}
+
+.squares__item--rounded {
+    border-radius: 20%;
+}
+
+.squares_small-square--centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20%;
+}

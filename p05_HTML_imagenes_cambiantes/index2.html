@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/style.css">
+    <title>imágenes cambiantes</title>
+</head>
+<body>
+  
+<h2>SEÑORA! NOS LO QUITAN DE LAS MANOS</h2>
+
+<button class="flechas" id="flechas">
+<img src="img/flechas.svg" alt="imagen flechas" title="imagen flechas">
+</button>
+
+
+    <!--picture ejemplo-->
+    <picture>
+        <source srcset="img/voldemort-triste.jpg" media="(min-width: 500px)">
+        <source srcset="img/varitas_voldemort.jpg" media="(min-width:200px)">
+        <img src="img/voldemort_de_merluza.png" alt="imagen de voldemort">
+    </picture>
+    <!--/picture-->
+
+<figure>
+    <img src="img/varitas_voldemort.jpg" alt="varitas voldemort" id="voldemort">
+    <figcaption>el poder de la mágia está en la varita</figcaption>
+</figure>
+
+<script>
+    /*1. Pulso el botón
+    2. Cambia la foto
+    */
+
+   //1. Capturo los elementos que necesito para actuar
+    const botonFlechas =document.querySelector('#flechas');
+    console.log(botonFlechas);
+
+    //foto voldemort
+    const voldemortImg =document.querySelector('#voldemort');
+    console.log(voldemortImg);
+
+    //2.Añadir un evento click al botón flechas
+    botonFlechas.addEventListener('click', cambiarfoto);
+
+    //3. Definir lo que va a suceder cuando haga click
+    function cambiarfoto(){
+        //obtener src de img
+       const ruta =voldemortImg.getAttribute ('src');
+
+       //log
+       console.log(ruta);
+
+       //pregunta: si la ruta es x haz esto
+        if(ruta == "img/varitas_voldemort.jpg"){voldemortImg.src ="img/voldemort-triste.jpg";
+        //si no
+        } else {
+            //haz esto otro
+        voldemortImg.src ="img/varitas_voldemort.jpg";}
+    }
+
+</script>
+
+</body>
+</html>

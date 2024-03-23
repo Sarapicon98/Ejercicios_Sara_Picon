@@ -1,0 +1,42 @@
+:root{border: 5px solid var(--primay-color);}
+
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+padding: 20px;
+}
+
+img{
+width: 100%;
+border: 5px solid var(--primay-color);
+}
+
+.img-voldemort{
+margin-top: 60px;
+padding: 24px;
+}
+
+p, figcaption{
+font-size: 40px;
+font-weight: 600;
+}
+.flechas{
+width: 10rem;
+padding: 24px;
+margin: 0 auto;
+cursor: pointer;
+}
+
+h2¨{
+font-size: 24px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color:black;
+padding: 24px;
+text-align: center;
+font-weight: bold;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *{
+            cursor: pointer;
+        }
+    </style>
+
+
+    <section>
+        <div class="div">
+            <button style="border:2px solid red; padding:30px" class="btn">click</button>
+        </div>
+    </section>
+
+    <script>
+        //    evento
+        const section = document.querySelector('section');
+        const div = document.querySelector('.div');
+        const btn = document.querySelector('.btn');
+        
+        const logSection = function () {
+            console.log('Section');
+        }
+
+        const logDiv = function (e) {
+            console.log('div');
+            console.log(e);
+            e.stopPropagation();
+            // para parar bubbling
+        }
+
+        const logBtn = function (e) {
+            console.log('btn');
+            
+        }
+
+        // btn.addEventListener(type, callback)
+        section.addEventListener('click', logSection, true);
+        div.addEventListener('click', logDiv);
+        btn.addEventListener('click', logBtn);
+
+        // eliminar evento
+        // btn.removeEventListener('click', logMessage);
+    </script>
+</body>
+
+</html>

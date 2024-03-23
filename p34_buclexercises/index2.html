@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con Números</title>
+</head>
+<body>
+
+    <script>
+        // pintar botones
+       for (let i=1; i<101; i++){
+        document.body.innerHTML += "<button>"+i+ "</button>";
+       }
+    //    capturo todos los botones pintados
+        const allbuttons = document.querySelectorAll('button');
+
+        // los recorro y añado el event listener
+       for (let i=0; i<allbuttons.length;i++){
+        allbuttons[i].addEventListener('click', function(){
+            console.log("click en", i+1);
+        })
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. Dado el siguiente objeto dom
+
+    <div><img src="https://picsum.photos/200/300" alt="foto random" title="foto aleatoria"><div>
+    
+    
+    2. Crea una función que reciba un objeto por parámetro y realice las siguientes acciones:
+        - Añadir padding:40px al div
+        - Añadir background rojo al div
+        - Añadir borde 2px solid black al div
+        - Cambiar el atributo 'title' de la imagen por "foto random" 
+        - Definir display: none para la imagen
+    
+    3. Extrae todas las acciones a funciones individuales
+    
+    4. Cuando acabes avisa a mike -->
+
+    <div><img src="https://picsum.photos/200/300" alt="foto random" title="foto aleatoria"></div>
+
+    <script>
+        // capturoo el elemento con 
+        const domElement = document.querySelector('div');
+
+
+        // defino la funcion
+        function docAction(domItem) {
+
+            changesStyles(domItem);
+            changeData(domItem);
+        }
+
+        // funcion para estilos
+        function changesStyles(domItem){
+            domItem.style.padding = "40px";
+            domItem.style.backgroundColor = "red";
+            domItem.style.border = "8px solid black";
+        }
+
+        // funcion para contenidos
+        function changeData(domItem){
+            domItem.childNodes.forEach(element => {
+                if(element.title=="foto aleatoria"){
+                    element.title = "foto random";
+                }
+            });
+        }
+
+
+
+
+        // Llamo a la funcion pasando el elemento dom por el parametro.
+        docAction(domElement);
+    </script>
+</body>
+
+</html>

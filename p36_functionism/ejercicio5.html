@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // OBJETO
+        const myObj = {
+            p1: "sara",
+            p2: "picon",
+            p3: 25,
+            P4: 345,
+            P5: "HOLA",
+            p6: "tralara",
+            concat: function(){
+                // creo variable vacia
+                let result = "";
+
+                // creo arrray con todas las props del objeto
+                Object.values(this).forEach(prop =>{
+                    if(typeof prop != "function") result += prop + " ";
+                })
+
+                // devuelvo el valor concatenado
+                return result;
+            }
+        }
+        // Object Keys
+        // Object.keys(myObj))
+        document.body.innerHTML = myObj.concat();
+        // console.log(Object.keys(myObj))
+
+        // Object.values
+        // Object.values(myObject)
+        // console.log(typeof myObj.p1);
+
+        // Object.entries
+        Object.entries(Object.entries(myObj));
+    </script>
+
+
+</body>
+
+</html>

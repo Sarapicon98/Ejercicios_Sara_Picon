@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.exterior {
+    background-color: grey;
+    padding: 10px;
+}
+
+.exterior__2 {
+    background-color: rgb(179, 132, 165);
+    padding: 10px;
+}
+
+.exterior__3 {
+    background-color: rgb(121, 183, 121);
+    padding: 10px;
+}
+
+.interior {
+    background-color: grey;
+    padding: 10px;
+}
+
+.interior__2 {
+    background-color: rgb(179, 132, 165);
+    padding: 10px;
+}
+
+.interior__3 {
+    background-color: rgb(121, 183, 121);
+    padding: 10px;
+}
+
+p{
+    display: inline;
+}

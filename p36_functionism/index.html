@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // ejercicio 4
+        // funcion que reciba 2 parametros : nombre y apellidos, los pongan en mayusculas, los concatene y los devuelva dentro de otra funcion que le concatena la edad pasada por parametro
+
+        // function concatenar(nombre, apellidos){
+        //         return nombre + " " + apellidos
+        // }
+        //     // llamada
+        //   document.body.innerHTML = concatenar("Sara", "Picón");
+
+        // Definición de la función
+        function obtenerInformacion(nombre, apellidos, edad) {
+            // Convertir nombre y apellidos a mayúsculas y concatenarlos
+            var nombreCompleto = (nombre.toUpperCase() + " " + apellidos.toUpperCase());
+
+            // Concatenar nombre completo con la edad y devolverlo
+            return nombreCompleto + ", " + edad + " años";
+        }
+
+        // Llamada a la función
+        var informacionCompleta = obtenerInformacion("Sara", "Picón", 25);
+
+        // Mostrar la información completa
+        console.log(informacionCompleta);
+    </script>
+
+</body>
+
+</html>

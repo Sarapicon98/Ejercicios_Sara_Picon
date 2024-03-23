@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #FFF;
+            /* TRANSFORM ROTATE */
+            transform: rotateY(45deg) rotateX(40deg) rotateZ(10deg);
+            /* TRANSFORM ROTATE SKEW*/
+            transform: skewX(0turn) skewY(6deg);
+            /* TRANSFORM TRANSLATE */
+            transform: translate(200px);
+            /* TRANSFORM SCALE */
+            transform: scale(-2);
+            /* TRANSFORM MATRIX */
+            /* matrix ( sclaeX(), skewY(), scaleY(), translateX(), translateY()) */
+            transform: matrix(2, 20def, 20deg, 1.5, 60, 10)
+        }
+    </style>
+    <div class="container">
+        Lorem ipsum
+        <div class="square">
+            NO SEAS CUADRICULAD@
+        </div>
+        Lorem ipsum
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLORISTERIA SARA</title>
+</head>
+
+<body>
+    <!--FLORISTERIA
+        
+        Tipo de flor - selector con 5 opciones
+        Margaritas
+        Rosas
+        Gladiolos
+        Petunias
+        Amapolas
+        Claveles
+Nombre de envio- text input
+Direccion de envio - text input
+Número de flores - number
+
+¿Quieres envuelto para regalo?- checkbox
+Boton de enviar - sumbit
+     
+-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: green;
+            font-size: 2rem;
+        }
+
+        p {
+            margin-top: 5px;
+
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .envioflores__parrafo2 {
+            font-weight: 800;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        legend {
+            font-weight: 800;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            cursor: pointer;
+        }
+
+        .envioflores {
+            padding: 40px;
+        }
+
+        .envioflores__row {
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .envioflores__row--column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .envioflores__row--check {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .envioflores__row--check .envioflores__label {
+            position: relative;
+            top: 2px;
+        }
+
+        .envioflores__input,
+        input {
+            height: 40px;
+            background-color: #edc7c8;
+            border: 2px solid #db7878;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .envioflores__comments {
+            height: 100px;
+            max-width: 100%;
+            min-width: 100%;
+            resize: none;
+        }
+
+        .envioflores_button {
+            width: auto;
+            border-radius: 1px;
+            padding: 12px 50px;
+            margin-top: 30px;
+            background-color: green;
+            color: #FFF;
+            font-weight: 600;
+        }
+
+        .envioflores__eye {
+            width: 20px;
+            position: absolute;
+            right: 14px;
+            top: 39px;
+        }
+    </style>
+
+    <form class="envioflores" action="recibirdata.php" method="post" name="recibirflores" enctype="multipart/form-data">
+        <h2>FLORISTERIA SARA</h2>
+        <p>Ramos de flores cuidadosamente elaborados y entregados a domicilio en Madrid.</p>
+        <p class="envioflores__parrafo2">¡PIDE AHORA! Entregas en el día en Madrid. En 24 horas en toda España.</p>
+
+        <!-- Text - nombre de envio -->
+        <div class="envioflores__row  envioflores__row--column">
+            <label class="envioflores__label" for="">Nombre y Apellidos</label>
+            <input name="nombre_apellidos" class="envioflores__input" type="text" maxlength="30" required
+                placeholder="Inserta tu nombre aquí">
+        </div>
+
+        <!-- TEXT - Dirección de envio-->
+        <div class="envioflores__row  envioflores__row--column">
+            <label class="envioflores__label" for="">Dirección de envio</label>
+            <input name="direccion_envio" class="envioflores__input" type="text" maxlength="30" required
+                placeholder="Inserta tu dirección aquí">
+        </div>
+        <!-- NUMBER -Número de flores -->
+        <div class="envioflores__row envioflores__row--column">
+            <label class="envioflores__label" for="envioflores_flores">Número de flores</label>
+            <input name="flores" class="envioflores__input" type="number" id="envioflores_flores">
+        </div>
+
+        <!-- checkbox - Envuelto para regalo -->
+        <div class="envioflores__row envioflores__row--check">
+            <label class="envioflores__label" for="envioflores__envuelto">Quiero que me lo envuelvas para regalo</label>
+            <input class="envioflores__input" type="checkbox" name="envuelto" id="envioflores__envuelto" checked>
+        </div>
+        <!-- SELECT -tipo de flor -->
+        <div class="envioflores__row altagym__row--column">
+            <label for="envioflores_tipologias">Elige el tipo de flor</label>
+            <select name="tipo_flores" id="envioflores_tipologias">
+                <option value="-" selected>-Seleccione opción-</option>
+                <option value="Margaritas"> Margaritas</option>
+                <option value="Rosas">Rosas</option>
+                <option value="Gladiolos"> Gladiolos</option>
+                <option value="Petunias"> Petunias</option>
+                <option value="Amapolas"> Amapolas</option>
+                <option value="Claveles"> Claveles</option>
+
+            </select>
+        </div>
+        <!-- TEXT AREA -comentarios -->
+        <div class="envioflores__row envioflores__row--column">
+            <label for="envioflores_coments">Introduce comentarios</label>
+            <textarea class="envioflores__comments" name="" id="envioflores_coments"></textarea>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="envioflores__row envioflores__row--column">
+            <label for="">password</label>
+            <input class="envioflores__input" type="password">
+            <div class="envioflores__eye">
+                <img src="img/eye.svg" alt="">
+            </div>
+        </div>
+        <!-- SUMBIT -->
+        <div class="envioflores__row">
+            <input class="envioflores_button" name="ENVIAR" type="submit" value="ENVIAR">
+        </div>
+
+        <script>
+            // 1. capturar todo lo necesarios
+            const ojo = document.querySelector('.envioflores__eye img');
+            const pawdInput = document.querySelector('[type="password"]');
+
+            // 2. evento click
+            ojo.addEventListener('click', function () {
+
+                // si el tipo es pwd lo cambia a texto
+                if (pawdInput.type === "password") {
+
+                    pawdInput.type = "text";
+                    ojo.src = "img/eyeclosed.svg"
+
+
+                } else { // si el tipo es texto lo cambio a pwd
+
+
+                    pawdInput.type = "password";
+                    ojo.src = "img/eye.svg"
+                }
+
+            })
+        </script>
+    </form>
+
+
+</body>
+
+</html>

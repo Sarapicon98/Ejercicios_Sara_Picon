@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1800px;
+            perspective-origin: 50% -50%;
+            position: relative;
+        }
+
+        .cube {
+            perspective: 900px;
+            transform-style: preserve-3d;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .cube__side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cube__side1 {
+            transform: rotateY(312deg) translateX(-5px) translateY(2px) translateZ(93px);
+        }
+
+        .cube__side2 {
+            transform: rotateX(-90deg) rotateZ(42deg) translateZ(-99px) translateX(-4px);
+        }
+
+        .cube__side3 {
+            transform: rotateY(43deg) translateZ(94px) translateY(2px);
+        }
+
+        .cube__tile {
+            flex-basis: 33.3%;
+            border: 8px solid #000;
+            border-radius: 8px;
+        }
+
+        .cube__tile:hover {
+            border-color: #0ff;
+        }
+
+        .cube__tile--1 {
+            background-color: red;
+        }
+
+        .cube__tile--2 {
+            background-color: green;
+        }
+
+        .cube__tile--3 {
+            background-color: blue;
+        }
+    </style>
+    <div class="containter">
+        <div class="cube">
+            <div class="cube__side cube__side1">
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+                <div class="cube__tile cube__tile--1"></div>
+            </div>
+            <div class="cube__side cube__side2">
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+                <div class="cube__tile cube__tile--2"></div>
+            </div>
+            <div class="cube__side cube__side3">
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+                <div class="cube__tile cube__tile--3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

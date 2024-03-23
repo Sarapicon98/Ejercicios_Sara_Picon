@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking de Actores y Actrices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <style>
+        .actor {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .score-0-500 {
+            background-color: #FFCCCC;
+        }
+
+        .score-500-1000 {
+            background-color: #FF9999;
+        }
+
+        .score-1000-2000 {
+            background-color: #FF6666;
+        }
+
+        .score-2000-3000 {
+            background-color: #FF3333;
+        }
+
+        .score-3000 {
+            background-color: #FF0000;
+        }
+    </style>
+
+    <h1>Ranking de Actores y Actrices</h1>
+    <div id="ranking"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('actors_and_actress.json')
+                .then(response => response.json())
+                .then(data => {
+                    const rankingDiv = document.getElementById('ranking');
+
+                    data.forEach(actor => {
+                        const actorDiv = document.createElement('div');
+                        actorDiv.classList.add('actor');
+
+                        const name = actor.name || 'No disponible';
+                        const alternativeName = actor.alternative_name || 'No disponible';
+                        const score = actor.score || 'No disponible';
+                        const objectId = actor.object_id || 'No disponible';
+
+                        actorDiv.innerHTML = `
+                <p><strong>Nombre:</strong> ${name}</p>
+                <p><strong>Nombre alternativo:</strong> ${alternativeName}</p>
+                <p><strong>Puntuación:</strong> ${score}</p>
+                <p><strong>Object ID:</strong> ${objectId}</p>
+            `;
+
+                        const scoreClass = getScoreClass(score);
+                        actorDiv.classList.add(scoreClass);
+
+                        rankingDiv.appendChild(actorDiv);
+                    });
+                })
+                .catch(error => console.error('Error al cargar el archivo JSON:', error));
+        });
+
+        function getScoreClass(score) {
+            if (score >= 3000) {
+                return 'score-3000';
+            } else if (score >= 2000) {
+                return 'score-2000-3000';
+            } else if (score >= 1000) {
+                return 'score-1000-2000';
+            } else if (score >= 500) {
+                return 'score-500-1000';
+            } else {
+                return 'score-0-500';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

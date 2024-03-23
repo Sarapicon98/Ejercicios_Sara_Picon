@@ -1,0 +1,48 @@
+
+/* clase */
+.parrafo-alternativo{
+color: purple;
+}
+
+
+/* Selector */
+#spanElement{
+background-color: #0000ff80;
+}
+
+/* atributo */
+[title="elemento Discolo Rojo"]{
+background-color: #ff000080;
+}
+
+/* Universal */
+.section-1{
+    background-color: rgb(164, 57, 164);
+}
+
+/* compuesto */
+.parrafo-alternativo.con-background{
+
+    background-color: rgb(164, 57, 164);
+}
+
+/* por descendencia */
+.section-2 div p{
+    color: yellow;
+}
+
+.section-3 p:first-child{
+    color: red;
+}
+
+.section-3 p:nth-child(2){
+    color: green;
+}
+
+.section-3 p:last-child{
+    color: blue;
+}
+
+section > p{
+    font-size: 21px;
+}

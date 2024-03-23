@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // fetch("https://world.openfoodfacts.org/api/v0/product/5060292302201.json")
+        //     .then(response =>{
+        //         console.log(response);
+        //         const food = response.json().then(data =>{
+        //            const myObj = data;
+        //             console.log(myObj.status);
+        //         })
+        //     })
+
+        const myJson = '{"I love": ["lafiesta", "copas", "suspender módulos"]}';
+        console.log(myJson);
+        const convertedJSON = JSON.parse(myJson);
+        console.log(convertedJSON);  </script>
+
+</body>
+
+</html>

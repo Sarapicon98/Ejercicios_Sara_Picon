@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Romance";
+  src: url("../Romance-8Me32.eot");
+  src: url("../Romance-8Me32.eot?#iefix") format("embedded-opentype"),
+    url("../Romance-8Me32.svg#Romance-8Me32") format("svg"),
+    url("../Romance-8Me32.woff") format("woff"),
+    url("../Romance-8Me32.woff2") format("woff2"),
+    url("../Romance-8Me32.ttf") format("truetype"),
+    url("../Romance-8Me32.otf") format("otf"),
+    url("../Romance-8Me32.svg#Romance-8Me32") format("svg");
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Romance";
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+p,
+span,
+div {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: inline grid;
+            grid-template-columns:repeat(4, 100px);
+        }
+
+        .child {
+            font-size: 4rem;
+
+        }
+
+        
+    </style>
+        <div class="container">
+            <span class="child">1</span>
+            <span class="child">2</span>
+            <span class="child">3</span>
+            <span class="child">4</span>
+            <span class="child">5</span>
+            <span class="child">6</span>
+            <span class="child">7</span>
+            <span class="child">8</span>
+        </div>
+        
+    <script>
+        // captura de elementos
+        const allItems = document.querySelectorAll('.child');
+
+        allItems.forEach((item, index) => {
+            //defino color
+            const color = "hsl(" + Math.floor(280 - (index * (280 / allItems.length))) + ", 100%, 50%)";
+
+            //asigno color al item
+            item.style.background = color;
+        });
+    </script>
+
+
+</body>
+
+</html>

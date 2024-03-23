@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear elementos</title>
+</head>
+<body>
+<style>
+    *{
+    font-size: 3rem;
+}
+</style>
+    <section id="mainSection">
+
+
+    </section>
+
+    <script>
+        // innerhtml
+        const mySection = document.querySelector("#mainSection");
+       
+        // mySection.innerHTML = "<p>hola</p>";
+        // parsea HTML
+        // mySection.textContent += "holi";
+        // no pasea HTML --->STRING
+       
+        // insertAdjacentHTML es igual que la de arriba
+        // creación de elementos
+        // 1. definición del elemento
+        const btn =document.createElement('button'); // creo variable y la igualo a create element
+        btn.id = "but";
+        btn.classList.add("add");
+        btn.textContent= "click"; // previamente le hemos metido contenido.
+        // 2.".inserción del elemento"
+        mySection.appendChild(btn); // inserto el elemento donde yo quiera
+
+            mySection.innerHTML= "<button id='but' class='ddd'>click</button>";
+
+    </script>
+</body>
+</html>

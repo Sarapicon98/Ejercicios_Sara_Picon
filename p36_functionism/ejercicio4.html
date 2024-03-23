@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulador DOM</title>
+</head>
+
+<body>
+    <!-- <div class="objDom">Hola soy un obj dom solitario</div>
+    <button onclick="domManipulation('.objDom', 'copy')">Copy</button>
+    <button onclick="domManipulation('.objDom', 'delete')">Delete</button>
+    
+    <script>
+    function domManipulation(selector, action) {
+        const element = document.querySelector(selector);
+        
+        if (action === 'copy') {
+            const clone = element.cloneNode(true);
+            element.parentNode.insertBefore(clone, element.nextSibling);
+        } else if (action === 'delete') {
+            element.parentNode.removeChild(element);
+        }
+    } -->
+    <div class="domContainer">
+        <div class="domObj" style="border:2px solid black">Hola soy un obj dom solitario</div>
+    </div>
+    <div class="action-buttons">
+        <button value="copy">Copy</button>
+        <button value="delete">Delete</button>
+        <button value="insert">Insert</button>
+    </div>
+
+    <script>
+        const objDomContainer = document.querySelector('.domContainer');
+        const actionBtns = document.querySelector('.action-buttons');
+
+        const domManipulator = function (e) {
+            const objDom = document.querySelector('.domObj');
+            // copiar
+            if (e.target.value === "copy") {
+
+                objDom && objDomContainer.appendChild(objDom.cloneNode(true));
+
+            } else if (e.target.value === "delete") {
+                // borrar
+                objDom && objDom.remove();
+
+            } else if(e.target.value === "insert"){
+                objDomContainer.innerHTML += `<div class="domObj" style="border:2px solid black">Hola soy un obj dom solitario</div>`
+            }else {
+                return;
+            }
+
+        }
+        // EVENTO
+        actionBtns.addEventListener('click', domManipulator);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+</head>
+
+<body>
+
+    <script>
+        const meses = ['enero',
+            'febrero',
+            'marzo',
+            'abril',
+            'mayo',
+            'junio',
+            'julio',
+            'agosto',
+            'septiembre',
+            'octubre',
+            'noviembre',
+            'diciembre'];
+
+        // le pinto los meses dentro de container
+        // creo container/transformarlo en un grid
+
+        document.body.innerHTML = `<div class="container" style="display:grid; grid-template-columns:repeat(4,1fr); min-height:400px"></div>`;
+
+        const container = document.querySelector('.container');
+        //recorro meses
+        meses.forEach(mes => {
+            container.innerHTML +=
+                `<div class="${mes}"><p>${mes}</p></div>`;
+            // captuto mes actual
+            const mesActual = document.querySelector("." + mes);
+            const tituloDelMes = document.querySelector("." + mes + " p");
+
+            tituloDelMes.style.gridColumn = "span 7";
+            mesActual.style.display = "grid";
+            mesActual.style.gridTemplateColumns = "repeat(7,1fr)";
+            // inyecto ls 31 días en cada mes
+            let dias = 31;
+            if (mes == 'febrero') {
+                dias = 28;
+            }
+            else if(mes== 'abril'|| mes=='junio' || mes=='septiembre' || mes=='noviembre'){
+                dias = 30;
+            }
+            for (let i = 0; i < dias; i++) {
+
+                mesActual.innerHTML += `<span style="padding:0.2rem">${i + 1}<span>`;
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

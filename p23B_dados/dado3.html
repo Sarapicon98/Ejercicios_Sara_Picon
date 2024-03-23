@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado 3</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center; 
+            /* al ser row justify-content en horizontal */
+            align-items: center;
+            /* este es vertical */
+            height: 100vh;
+            background-color: #00f;
+            
+        }
+
+        .dado{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 30px;
+            padding: 25px;
+        }
+
+        .punto{
+            padding: 35px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #000;
+        }
+        .punto--2{
+            align-self: center;
+        }
+        .punto--3{
+            align-self: flex-end;
+        }
+    </style>
+<div class="container">
+<div class="dado">
+    <div class="punto punto--1"></div>    
+    <div class="punto punto--2"></div>
+    <div class="punto punto--3"></div>
+</div>
+</div>
+</body>
+</html>

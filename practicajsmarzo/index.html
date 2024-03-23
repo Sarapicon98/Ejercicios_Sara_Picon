@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tablero de Ajedrez</title>
+<style>
+    .ajedrez {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .celda {
+        aspect-ratio: 1/1;
+        border: 1px solid black;
+    }
+
+    [value="negra"] {
+        background: #000;
+        color: #fff; 
+    }
+
+    [value="blanca"] {
+        background: #fff;
+    }
+
+    .ocultar-blancas {
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="ajedrez">
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+       
+    </div>
+<button class="ocultar-blancas">Mostrar/Ocultar Blancas</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const botonClick = document.querySelector('.ocultar-blancas');
+        const celdasBlancas = document.querySelectorAll('[value="blanca"]');
+
+        botonClick.addEventListener('click', function() {
+            celdasBlancas.forEach(celda => {
+                celda.classList.toggle('oculto');
+            });
+        });
+    });
+</script>
+</body>
+</html>
+</body>
+
+</html>

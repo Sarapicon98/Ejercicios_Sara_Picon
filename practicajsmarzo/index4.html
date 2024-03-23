@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- // crear un div que contenga el texto hola con el borde rojo y un atributo title que cuando pases el ratón por encima diga tengo el title rojo. -->
+
+    <style>
+        * {
+            font-size: 3rem;
+        }
+    </style>
+    <section id="mainSection">
+
+
+    </section>
+
+
+    <script>
+        const mySection = document.querySelector("#mainSection");
+
+        // 1. Definición del fragmento
+        const fragment = new DocumentFragment();
+
+        const mydiv = document.createElement('div');
+        // creo el fragmento
+        mydiv.textContent = "hola";
+        mydiv.title = "hola";
+        mydiv.style.border = "2px solid red";
+
+        fragment.append(mydiv);
+        // añado elemento al fragmento
+        mySection.append(fragment);
+        // inyecto fragmento
+    </script>
+</body>
+
+</html>

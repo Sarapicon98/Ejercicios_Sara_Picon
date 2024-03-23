@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPOS DE FUNCIONES</title>
+</head>
+
+<body>
+    <script>
+        // TIPOS DE FUNCIONES
+
+        // pepa();
+        // funcion declarada (nombres de las funciones en minusculas) el orden de "console no importa"
+        // function pepa() {
+        // Código a ejecutar
+        //     console.log('pepa')
+        // }
+
+        // función expresión (el orden si importa)
+        // const juani = function () {
+        // código
+        //     console.log('juani')
+        // }
+
+        // función anónima
+        // document.body.addEventListener('click', function () {
+        //     console.log('click')
+        // })
+
+        // IIFE- Función autoinvocada. es una función que se llama a sí misma
+        // (function pastel(mens){
+        //     console.log(mens);
+        // })('pastel');
+
+        // ARROW function. Si function que no genera SCOPE(Es el ámbito donde una variable o una función está disponible.)
+        // const loquesea = (param1, param2) =>{
+        //     // código
+
+        // }
+
+        // ejemplo
+        // scope inicial
+        // const mivar = "hola estoy fuera";
+
+
+
+        // scope function
+        // function log(param1){
+
+        // scope de bloque
+        //     if(true){ var i = 5 }
+
+        //     const mivar = "hola estoy dentro";
+        //     console.log(i);
+        // }
+
+        // console.log(mivar);
+
+        // log();
+
+
+        //FUNCIÓN RECURISV - loop de funcion. se llama a sí misma
+
+        function countdown(num) {
+            // pinto el número
+            console.log(num);
+            const newNumber = num -1;
+
+            if (num > 0) {
+                countdown(newNumber)
+            }
+        }
+
+        countdown(10);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circunferencia</title>
+    <style>
+        .circunferencia {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function pintarCircunferencia(diametro) {
+            var circunferencia = document.createElement('div');
+            circunferencia.classList.add('circunferencia');
+            circunferencia.style.width = diametro + 'px';
+            circunferencia.style.height = diametro + 'px';
+            document.body.appendChild(circunferencia);
+        }
+
+        pintarCircunferencia(200); // Llama a la función con un diámetro de 200px
+    </script>
+</body>
+</html>

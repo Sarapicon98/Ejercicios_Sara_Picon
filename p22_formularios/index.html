@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>formularios</title>
+</head>
+
+<body>
+
+    <form class="altagym" action="recibirdata.php" method="post" name="altagym"
+        enctype="application/x-www-form-urlencoded">
+
+        <h2> FORMULARIO DE INSCRIPCIÓN</h2>
+        <p> Date de alta blabla si quieres Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias incidunt
+            consequatur id nihil, hic excepturi quae, perferendis quisquam natus unde nam totam, sit officiis maxime
+            nobis in laudantium minima eius.</p>
+        <!-- QUEDARSE CON EL QUE HEMOS HECHO EN CLASE QUE ESTA CONECTADO CON LOCALHOST -->
+        <!-- text -->
+        <div class="altagym__row altagym__row--column">
+            <label class="altagym__label" for="">Nombre y Apellidos</label>
+            <input name="Nombre_apellidos" class="altagym__input" type="text" maxlength="30" required
+                placeholder="Inserta tu nombre aquí">
+        </div>
+        <!-- get envia los datos sin encriptar -->
+        <!-- post envía los datos encriptados (método más seguro) -->
+        <!--/ text -->
+
+        <!-- number -->
+        <div class="altagym__row altagym__row--column">
+            <label class="altagym__label" for="altagym__edad">Introduce tu edad</label>
+            <input name="edad" class="altagym__input" type="number" id="altagym__edad" required
+                placeholder="Inserta tu edad aquí">
+        </div>
+        <!-- /number -->
+
+        <!-- checkbox -->
+        <div class="altagym__row altagym__row--check">
+            <label class="altagym__label" for="altagym__newsletter">Quiero que me envies newsletter</label>
+            <input class="altagym__input" type="checkbox" name="newsletter" id="altagym__newsletter" checked>
+        </div>
+        <!--/ checkbox -->
+
+        <!-- radiobutton -->
+        <fieldset class="altagym__row">
+            <legend>Dinos tu sexo, por favor</legend>
+            <div class="altagym__row">
+                <input type="radio" name="altagym__sex" id="altagym_man">
+                <label for="altagym_man">Hombre</label>
+            </div>
+            <div>
+                <input type="radio" name="altagym__sex" id="altagym_woman">
+                <label for="altagym_woman">Mujer</label>
+            </div>
+            <div>
+                <input type="radio" name="altagym__sex" id="altagym_other">
+                <label for="altagym_other">Otro</label>
+            </div>
+        </fieldset>
+
+        <!-- select -->
+        <div class="altagym__row altagym__row--column">
+            <label class="altagym__membresia" for="select">Elige tus clases</label>
+            <select name="tipodemiembro" id="altagym__membresia">
+                <optgroup label="entrenamientos">
+                    <option value="spinning">spinning</option>
+                    <option value="crossfit">crossfit</option>
+                </optgroup>
+                <optgroup label="deportes">
+                    <option value="Petanca">Petanca</option>
+                    <option value="Futbol">Fútbol</option>
+                </optgroup>
+            </select>
+        </div>
+        <!-- Text Area -->
+        <div class="altagym__row altagym__row--column">
+            <label for="altagym_comments">Introduce tus comentarios</label>
+            <textarea class="altagym_comments" name="comentarios" id="altagym_comments"></textarea>
+        </div>
+        <!-- sumbit -->
+        <div class="altagym__row">
+            <input type="submit" value="ENVIAR">
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>

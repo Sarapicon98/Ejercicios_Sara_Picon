@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f4f6e5;
+  padding: 30px;
+}
+
+.container {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgb(183, 89, 89);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button:hover {
+  background: rgb(217, 121, 121);
+}
+
+.green-text {
+  color: green;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.yellow-text {
+  color: yellow;
+}
+.result {
+  margin-top: 50px;
+  border: 2px solid #000;
+  height: 100px;
+  background: #fff;
+}

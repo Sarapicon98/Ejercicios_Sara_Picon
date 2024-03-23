@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 2 GRID PSYCHOGENIUS</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #000;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 0.5fr 1fr 1.5fr 2fr 3fr 2fr 1.5fr 1fr 0.5fr;
+        }
+        
+        .grid-item{
+            position: relative;
+            border-radius: 50%;
+            color: #fff;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1/1;
+            font-size: 9vw;
+        }
+
+        .photo{
+            background-image: url("img/mcenroe.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 30%;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            mix-blend-mode: multiply;
+        }
+    </style>
+
+    <div class="grid-container">
+        <div class="grid-item grid-item--1"></div>
+        <div class="grid-item grid-item--2"></div>
+        <div class="grid-item grid-item--3"></div>
+        <div class="grid-item grid-item--4"></div>
+        <div class="grid-item grid-item--5">G <div class="photo"></div></div>
+        <div class="grid-item grid-item--6"></div>
+        <div class="grid-item grid-item--7"></div>
+        <div class="grid-item grid-item--8"></div>
+        <div class="grid-item grid-item--9"></div>
+        <div class="grid-item grid-item--10"></div>
+        <div class="grid-item grid-item--11"></div>
+        <div class="grid-item grid-item--12"></div>
+        <div class="grid-item grid-item--13"></div>
+        <div class="grid-item grid-item--14">E <div class="photo"></div></div>
+        <div class="grid-item grid-item--15"></div>
+        <div class="grid-item grid-item--16"></div>
+        <div class="grid-item grid-item--17"></div>
+        <div class="grid-item grid-item--18"></div>
+        <div class="grid-item grid-item--19"></div>
+        <div class="grid-item grid-item--20"></div>
+        <div class="grid-item grid-item--21"></div>
+        <div class="grid-item grid-item--22"></div>
+        <div class="grid-item grid-item--23">N <div class="photo"></div></div>
+        <div class="grid-item grid-item--24"></div>
+        <div class="grid-item grid-item--25"></div>
+        <div class="grid-item grid-item--26"></div>
+        <div class="grid-item grid-item--27"></div>
+        <div class="grid-item grid-item--28"></div>
+        <div class="grid-item grid-item--29"></div>
+        <div class="grid-item grid-item--30"></div>
+        <div class="grid-item grid-item--31"></div>
+        <div class="grid-item grid-item--32">I <div class="photo"></div></div>
+        <div class="grid-item grid-item--33"></div>
+        <div class="grid-item grid-item--34"></div>
+        <div class="grid-item grid-item--35"></div>
+        <div class="grid-item grid-item--36"></div>
+        <div class="grid-item grid-item--37"></div>
+        <div class="grid-item grid-item--38"></div>
+        <div class="grid-item grid-item--39"></div>
+        <div class="grid-item grid-item--40"></div>
+        <div class="grid-item grid-item--41">U <div class="photo"></div></div>
+        <div class="grid-item grid-item--42"></div>
+        <div class="grid-item grid-item--43"></div>
+        <div class="grid-item grid-item--44"></div>
+        <div class="grid-item grid-item--45"></div>
+        <div class="grid-item grid-item--46"></div>
+        <div class="grid-item grid-item--47"></div>
+        <div class="grid-item grid-item--48"></div>
+        <div class="grid-item grid-item--49"></div>
+        <div class="grid-item grid-item--50">S <div class="photo"></div></div>
+        <div class="grid-item grid-item--51"></div>
+        <div class="grid-item grid-item--52"></div>
+        <div class="grid-item grid-item--53"></div>
+        <div class="grid-item grid-item--54"></div>
+    </div>
+
+    <script>
+        const allButtons = document.querySelectorAll('.grid-item');
+
+        allButtons.forEach((item, index) => {
+            //defino color
+            const color = "hsl(" + Math.floor(280 - (index * (280 / allButtons.length))) + ", 100%, 50%)";
+
+            //asigno color al item
+            item.style.backgroundColor = color;
+        });
+
+    </script>
+</body>
+
+</html>

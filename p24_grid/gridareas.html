@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gridareas</title>
+</head>
+<body>
+    <style>
+        header, footer, main, aside{
+            padding: 100px;
+        }
+        .gridarea{
+            display: grid;
+            grid-template-areas: 
+                            "header header header header"
+                            "aside main main main"
+                            "footer footer footer footer";
+        }
+        header{
+            background-color: magenta;
+            grid-area: header;
+        }
+        aside{
+            background-color: royalblue;
+            grid-area: aside;
+        }
+        main{
+            background-color: yellow;
+            grid-area: main;
+        }
+        footer{
+            background-color: magenta;
+            grid-area: footer;
+        }
+    </style>
+    <div class="gridarea">
+        <header>header</header>
+        <aside>aside</aside>
+        <main>main</main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

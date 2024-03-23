@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --yellow: #FC0;
+    }
+    body { font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; background-color: #000; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .btn {
+        cursor: pointer;
+    }
+
+    section {
+        padding: 160px;
+        height: 100vh;
+        width: 100vw;
+    } 
+
+    .tv {
+        height: 100%;
+        max-width: 800px;
+        border-radius: 50px;
+        background: linear-gradient(10deg, #000 0%, #222 50%, #000 100% );
+        padding: 40px 40px 120px;
+        border: 2px solid var(--yellow);
+        background-size: 20px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .tv__screen {
+        position: relative;
+        height: 100%;
+        width: auto;
+        border-radius: 10px;
+        background: #000;
+        border: 4px solid var(--yellow);
+        overflow: hidden;
+    }
+
+    .tv__shine {
+        position: absolute;
+        box-shadow: inset 0 0 200px 0px #fff;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        animation: fulgor 0.03s linear 0.5s infinite alternate;
+        opacity: 0.6
+    }
+
+    .tv__image {
+        background-image: url(img/teleretro.jpg);
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;  
+        display: none;
+    }
+
+    .tv__image.active {
+        display: block;
+    }
+
+    .tv__buttons-area {
+        overflow: auto;
+        color:#FFF;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tv__buttons {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 200px;
+        align-content: flex-start;
+    }
+
+    .tv__buttons .tv__buttons-item {
+        flex-basis: 25%;
+        border: 1px solid #000;
+    }
+
+    .tv__buttons .tv__buttons-item button{
+        height: 100%;
+        width: 100%;
+        padding:2px 6px;
+        font-weight: 800;
+    }
+
+    .tv__buttons button {
+        width: 100%;
+        border: 2px solid #000;
+        background: linear-gradient(0deg, var(--yellow) 0%, #FD9 50%, var(--yellow) 100%);
+    }
+    .tv__buttons button.active {
+        box-shadow: inset 0 0 10px 2px red;
+    }
+
+    .tv__on-off {
+        margin-top: 14px;
+    }
+
+    .tv__on-off button {
+        width: 50px;
+        height: 30px;
+        background-color: var(--yellow);
+        filter:hue-rotate(306deg);
+        border: 1px solid #333;
+        border-radius: 2px;
+    }
+
+    .tv__sint button {
+        width: 50px;
+        height: 10px;
+        background-color: var(--yellow);
+        border: 1px solid #333;
+        border-radius: 2px;
+    }
+
+    .tv__patas {
+        position: absolute;
+        bottom: -35px;
+        left:0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .tv__pata{
+        width: 100px;
+        height: 30px;
+        background-color: var(--yellow);
+        
+    }
+
+    @keyframes fulgor {
+        0%  {box-shadow: inset 0 0 104px 0px #fff; }
+        50%  {box-shadow: inset 0 0 40px 0px #fff; }
+        100%  {box-shadow: inset 0 0 104px 0px #fff; }
+    }
+
+</style>
+<body>
+    <section>
+        <div class="tv">
+            <div class="tv__screen">
+                
+                <div class="tv__image">
+                    <div class="tv__shine">
+
+                    </div>
+                </div>   
+            </div>
+            <div class="tv__buttons-area">
+                <div class="tv__buttons">
+                    <div class=" tv__buttons-item"><button class="btn active" id="teleretro.jpg">1</button></div>
+                    <div class=" tv__buttons-item"><button class="btn" id="goonies.jpg">2</button></div>
+                    <div class=" tv__buttons-item"><button class="btn" id="lego.png">3</button></div>
+                    <div class=" tv__buttons-item"><button class="btn" id="rain.jpg">4</button></div>
+                    <div class=" tv__buttons-item"><button class="btn" id="love.jpg">5</button></div>
+                    <div class=" tv__buttons-item"><button class="btn" id="pater.jpg">6</button></div>
+                    <div class=" tv__buttons-item"><button class="btn">7</button></div>
+                    <div class=" tv__buttons-item"><button class="btn">8</button></div>
+                </div>
+                <div class="">
+                    <div class="tv__on-off">
+                        <button class="btn"></button>
+                        <div>ON / OFF</div>
+                    </div>
+                    <div class="tv__sint">
+                        <button class="btn"></button>
+                        <div>SINT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tv__patas">
+                <div class="tv__pata"></div>
+                <div class="tv__pata"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const allButtons = document.querySelectorAll('.tv__buttons-item .btn');
+        const tvImage = document.querySelector('.tv__image');
+        const shine = document.querySelector('.tv__shine');
+
+        //canales
+        document.querySelectorAll('.tv__buttons-item .btn').forEach(element => {
+            element.addEventListener("click", function(e) {
+                allButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+                console.log(e.target)
+                e.target.classList.add('active');
+                tvImage.style.backgroundImage = "url(img/" + e.target.id +")";
+            }); 
+        });
+        //on off
+        document.querySelector('.tv__on-off .btn').addEventListener("click", function(e) {
+            tvImage.classList.toggle('active');
+        });
+
+        //Sintonizado
+        document.querySelector('.tv__sint .btn').addEventListener("click", function(e) {
+            shine.style.display= "none";
+        });
+    </script>
+
+    
+    
+</body>
+</html>
